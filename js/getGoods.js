@@ -3,8 +3,6 @@ let getGoods = () => {
     let links = document.querySelectorAll('.navigation-link');
     let putLocalStorage = (key, value) => localStorage.setItem(key, JSON.stringify(value));
     let getLocalStorage = (key) => JSON.parse(localStorage.getItem(key));
-    // putLocalStorage('hello',{color:'red'});
-    console.log(getLocalStorage('data'));
 
     let getData = () => {
         fetch('https://test-9aa22-default-rtdb.firebaseio.com/db.json ')
@@ -19,6 +17,7 @@ let getGoods = () => {
             e.preventDefault();
             getData();
             console.log(e.target)
+            console.log(getLocalStorage('data'));
         });
     })
 

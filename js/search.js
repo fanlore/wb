@@ -1,7 +1,7 @@
 let search = () => {
     let input = document.querySelector('.search-block > input');
     let searchBtn = document.querySelector('.search-block > button');
-
+    let allBtn = document.querySelector('.more');
     let renderData = (goods) => {
         let goodsContainer = document.querySelector('.long-goods-list');
         goodsContainer.innerHTML = "";
@@ -43,6 +43,12 @@ let search = () => {
     searchBtn.addEventListener('click', (e) => {
         getData(input.value);
     });
+
+    allBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        getData('');
+    });
+
 
 }
 
